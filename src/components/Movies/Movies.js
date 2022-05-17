@@ -1,37 +1,31 @@
-import React, { Component } from 'react';
+import React, {  useEffect, useState } from 'react';
 import MovieItem from '../MovieItem/MovieItem';
+import SearchBox from '../SearchBox/SearchBox';
 import './Movies.css';
 
-class Movies extends Component {
-    state = { 
-        movies: [
-            {
-                imdbID: 'tt3896198',
-                title: "Guardians of the Galaxy Vol. 2",
-                year: 2017,
-                poster: "https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
-
-            },
-            {
-                imdbID: 'tt0068646',
-                title: "The Godfather",
-                year: 1972,
-                poster: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
-
-            }
-        ]
+const Movies =(props)=>{
+    const [movies,setMovies]=useState([])
+    const getmovieRequest=async()=>{
+        const url=`http://www.omdbapi.com/?s=one&apikey=a3ae0397`
+        const response=await fetch(url)
+        const responseJson=await response.json()
+        console.log(responseJson)
+        setMovies(responseJson.Search)
     }
-    render() { 
-        return ( 
-            <ul className="movies">
-                {this.state.movies.map((movie) => (
-                    <li className="movies__item" key={movie.imdbID}>
-                        <MovieItem {...movie} />
-                    </li>
-                ))}
-            </ul>
-        );
+    useEffect(()=>{
+        getmovieRequest()
+    })
+    console.log(movies)
+    return ( 
+        <ul className="movies">
+            {movies.map((movie) => (
+                <li className="movies__item" key={movie.imdbID}>
+                    <MovieItem movie={movie} />
+                </li>
+            ))}
+        </ul>
+    );
     }
-}
- 
 export default Movies;
+
+
