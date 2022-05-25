@@ -4,8 +4,9 @@
 }
 
 .header__title {
-    font-family: 'Luckiest Guy', cursive;
-    color: #FFEEDB;
-    font-size: 45px;
+    color: black;
+    font-family:Georgia, 'Times New Roman', Times, serif; 
     margin-left: 40px;
+    font-size: 50px;
+   
 }

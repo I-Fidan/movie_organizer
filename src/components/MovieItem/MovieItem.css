@@ -1,9 +1,9 @@
 @media (min-width: 800px) {
 
     .movie-item {
-        padding: 2.7933vw;
-        background-color: #FFEEDB;
         display: flex;
+        padding: 2.8vw;
+        background-color:antiquewhite;
     }
 
     .movie-item__poster {
@@ -40,14 +40,15 @@
     }
 
     .movie-item {
-        padding: 2.7933vw;
-        background-color: #FFEEDB;
         display: flex;
+        padding: 2.7933vw;
+        background-color:antiquewhite;
+        
     }
 
     .movie-item__poster {
         height: 20.94972vw;
-        margin-right: 2.93296vw;
+        margin-right: 2.9vw;
     }
 
     .movie-item__title {

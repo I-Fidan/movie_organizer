@@ -21,7 +21,7 @@ class SearchBox extends Component {
         this.props.dispatch(addMovies(data.Search));
       })
       .catch(error => {
-       alert("We couldnt find your movie. Be sure you typed it right.")
+       alert("We couldnt find your movie.")
       })
     
   };
@@ -41,7 +41,7 @@ class SearchBox extends Component {
               value={searchLine}
               type="text"
               className="search-box__form-input"
-              placeholder=" Enter a film name"
+              placeholder="..."
               onChange={this.searchLineChangeHandler}
             />
           </label>
