@@ -1,31 +1,27 @@
-import React, {  useEffect, useState } from 'react';
+import React, { Component } from 'react';
 import MovieItem from '../MovieItem/MovieItem';
-import SearchBox from '../SearchBox/SearchBox';
 import './Movies.css';
+import { connect } from "react-redux";
 
-const Movies =(props)=>{
-    const [movies,setMovies]=useState([])
-    const getmovieRequest=async()=>{
-        const url=`http://www.omdbapi.com/?s=one&apikey=a3ae0397`
-        const response=await fetch(url)
-        const responseJson=await response.json()
-        console.log(responseJson)
-        setMovies(responseJson.Search)
-    }
-    useEffect(()=>{
-        getmovieRequest()
-    })
-    console.log(movies)
-    return ( 
-        <ul className="movies">
-            {movies.map((movie) => (
-                <li className="movies__item" key={movie.imdbID}>
-                    <MovieItem movie={movie} />
-                </li>
-            ))}
-        </ul>
+class Movies extends Component {
+  render() {
+    return (
+      <ul className="movies">
+        {this.props.movies.map((movie) => (
+          <li className="movies__item" key={movie.imdbID}>
+            <MovieItem {...movie} disabled={this.props.listMovies.find(el => el.imdbID === movie.imdbID)}/>
+          </li>
+        ))}
+      </ul>
     );
-    }
-export default Movies;
+  }
+}
 
+const mapStateToProps = (state) => {
+  return {
+    movies: state.movies,
+    listMovies: state.listMovies,
+  };
+};
 
+export default connect(mapStateToProps)(Movies);
