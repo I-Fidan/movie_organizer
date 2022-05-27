@@ -72,21 +72,23 @@
 
 @media (min-width: 360px) and (max-width: 800px) {
     .favorites {
-        width: 55.86592vw;
+        width: 53.86592vw;
+        /* height: 43vh; */
+        padding: 30px 20px;
+        /* margin-right: 1.5vw; */
+        margin: auto;
         box-sizing: border-box;
         border: 1px solid rgba(0, 8, 7);
-        padding: 30px 20px;
-        margin-right: 1.5vw;
-        margin: auto;
     }
 
     .favorites__name {
+        font-size: 18px;
         box-sizing: border-box;
         width: 100%;
-        font-size: 16px;
+        margin-bottom: 28px;
         padding: 5px 10px;
         border: 1px solid rgba(0, 8, 7, .5);
-        margin-bottom: 24px;
+        
     }
 
     .favorites__list--item {
