@@ -1,4 +1,4 @@
-@media (min-width: 800px) {
+@media (min-width: 801px) {
 
     .movie-item {
         display: flex;
@@ -33,10 +33,11 @@
     }
 }
 
-@media (min-width: 360px) and (max-width: 800px) {
+@media (min-width: 320px) and (max-width: 801px) {
     .movie-item {
         width: 50.27933vw;
         /* margin-left: 5.61798vw; */
+    
     }
 
     .movie-item {
@@ -61,7 +62,7 @@
         border: none;
         background-color: yellowgreen;
         padding: 1.39665vw 2.09497vw;
-        color: black;
+        color: #FFEEDB;
         font-size: 2.77778vw;
         transition: all 0.2s linear;
     }

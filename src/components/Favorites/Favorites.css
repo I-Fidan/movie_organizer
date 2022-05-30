@@ -1,4 +1,4 @@
-@media (min-width: 800px) {
+@media (min-width: 801px) {
    
     .favorites__name {
         box-sizing: border-box;
@@ -70,13 +70,14 @@
 }
 
 
-@media (min-width: 360px) and (max-width: 800px) {
+@media (min-width: 320px) and (max-width: 801px) {
     .favorites {
         width: 53.86592vw;
         /* height: 43vh; */
         padding: 30px 20px;
         /* margin-right: 1.5vw; */
         margin: auto;
+        margin-top: 5vw;
         box-sizing: border-box;
         border: 1px solid rgba(0, 8, 7);
     }
@@ -118,11 +119,12 @@
 
     .favorites__save {
         border: none;
+        border-radius: 10px;
         background-color:burlywood;
-        padding: 10px 15px;
+        padding: 5px 10px;
         color: black;
-        font-size: 16px;
-        transition: all 0.2s linear;
+        font-size: 13px;
+        /* transition: all 0.2s linear; */
     }
 
     .favorites__save:disabled {
@@ -131,8 +133,6 @@
 
     .favorites__save:hover {
         cursor: pointer;
-        opacity: 0.9;
-        transition: all 0.2s linear;
     }
 
     .link__none {
